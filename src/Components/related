@@ -1,0 +1,3 @@
+GET https://www.googleapis.com/youtube/v3/search?part=snippet&relatedToVideoId=5rOiW_xY-kc&type=video&key={YOUR_API_KEY}
+
+REACT_APP_API_KEY=AIzaSyDQLTshcjR3ZT1rgB11YdE5Q4FeMh0pUkc

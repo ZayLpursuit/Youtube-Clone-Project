@@ -1,9 +1,5 @@
 import './App.css';
-import { useEffect,useState } from 'react';
-import {BrowserRouter as Router, Routes,Route, Link} from "react-router-dom"
-import Sidebar from './Components/Sidebar';
-import Categories from './Components/Categories';
-
+import {BrowserRouter as Router, Routes,Route, } from "react-router-dom"
 import Nav from './Components/Nav';
 import About from './Components/About';
 import Home from './Components/Home';
@@ -22,7 +18,7 @@ function App() {
       <Route path="/" element={<Home />} />
       <Route path="/about/" element={<About />}/>
      <Route path="/video/:id" element={<Video  />} />
-    
+    <Route path="/category/:category" element={<Home/>} />
 
     </Routes>
   </Router>
