@@ -1,0 +1,17 @@
+const [form,setForm]=({name:"",comment:""})
+
+function handleChange(e){
+    setForm({...form,[e.target.id]:e.target.comment})
+}
+
+
+function onSubmit(e){
+e.preventDefault()
+return (
+    <div>
+        <p>@ {form.name}</p>
+        <p>{form.comment}</p>
+        
+    </div>
+)
+}
