@@ -30,7 +30,7 @@ export default function Search ({setVidData,setVidType}){
 
     return (
         <div>
-            <p>hi</p>
+            
             <section>
         <form className="search-form" onSubmit={submit}>
             <input type="text" value={input} id="search-bar" onChange={handleChange} required/>

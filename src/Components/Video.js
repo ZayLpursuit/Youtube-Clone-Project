@@ -52,53 +52,50 @@ setForm({...form,[e.target.id]:""})
 
 }
 
-    return (
+    return  (
+      <div className="video-page">
+         <div className="related-sidebar">
+          <Sidebar/>
+         </div>
+      <div className="column2">
+      <div className="vid-deets">
+      <YouTube videoId={id} opts={opts} />
+      <h1 className="pad-tit">{info.title}</h1>
+      <div className="flexed">
+      <h3 className="vid-page-tit">{info.channelTitle}</h3>
+      <p className="views">{stats.viewCount} <span>views</span></p>
+      <p classname="likes">{stats.likeCount} <span>likes</span></p>
+      </div>
+      <p className="vid-description"><h3>Description</h3>{info.description}</p>
+      </div>
 
-    <div >
-        
-        <div className="video-page">
-           <div className="related-sidebar">
-            <Sidebar/>
-           </div>
-        <div className="column2">
-        <div className="vid-deets">
-        <YouTube videoId={id} opts={opts} />
-        <h1 className="pad-tit">{info.title}</h1>
-        <div className="flexed">
-        <h3 className="vid-page-tit">{info.channelTitle}</h3>
-        <p className="views">{stats.viewCount} <span>views</span></p>
-        <p classname="likes">{stats.likeCount} <span>likes</span></p>
-        </div>
-        <p className="vid-description"><h3>Description</h3>{info.description}</p>
-        </div>
+      
 
-        
+      <div className="x">
+      <form className="comments-form" onSubmit={onSubmit}>
+      <h3>Leave a comment</h3>
+          <label for="name" className="name-label">Name:
+          <input type="text" id="name" value={form.name} onChange={handleChange}/>
+          </label>
+          <label for ="comment">Comment:
+          <input type="text-area" id="comment" value={form.comment} onChange={handleChange}/>
+          </label>
+          <input type="submit" value="submit" className="cmmts-submit"/>
+      </form>
+      </div>
 
-        <div className="x">
-        <form className="comments-form" onSubmit={onSubmit}>
-        <h3>Leave a comment</h3>
-            <label for="name" className="name-label">Name:
-            <input type="text" id="name" value={form.name} onChange={handleChange}/>
-            </label>
-            <label for ="comment">Comment:
-            <input type="text-area" id="comment" value={form.comment} onChange={handleChange}/>
-            </label>
-            <input type="submit" value="submit" className="cmmts-submit"/>
-        </form>
-        </div>
-
-        
-        <div className="cmmts-section">
-        <h3>Comments</h3>
-      <Comments comments={comments}/>
-    </div>
-    </div>
-    <div className="RV-section">
-        <h1 className="white">Related Videos</h1>
-        <RelatedVids videos={relatedVids} />
-    </div>
-    </div>
-    )
+      
+      <div className="cmmts-section">
+      <h3>Comments</h3>
+    <Comments comments={comments}/>
+  </div>
+  </div>
+  <div className="RV-section">
+      <h1 className="white">Related Videos</h1>
+      <RelatedVids videos={relatedVids} />
+  </div>
+  </div>
+  )
 }
 
 

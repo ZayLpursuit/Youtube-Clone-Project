@@ -4,7 +4,7 @@ import GitHubIcon from '@mui/icons-material/GitHub';
 export default function ZayContact(){
     return (
       <div>
-        <p>hi</p>
+       
           <strong>Zay's Contact Information</strong>
 
 <h2>Contact Card</h2>

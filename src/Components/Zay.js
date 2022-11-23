@@ -25,7 +25,7 @@ export default function Zay() {
 
   return (
     <div className="Zay-Container">
-<p>hi</p>
+
 <img className="personal-icon" src="./assets/Zaypic.png" alt="Zay"/>
 
       <div>

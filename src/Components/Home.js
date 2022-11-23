@@ -18,7 +18,7 @@ fetch(`https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDe
 
     return (
         <div className="home-page">
-            <p>hi</p>
+            
           <Sidebar/>
           <div className="search-cat">
             <Search setVidData={setVidData} setVidType={setVidType}/>
