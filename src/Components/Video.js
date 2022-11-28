@@ -4,8 +4,9 @@ import React, { useEffect, useState } from "react";
 import Comments from "./Comments.js";
 import RelatedVids from "./RelatedVids.js";
 import Sidebar from "./Sidebar.js";
+import ThumbUpIcon from "@mui/icons-material/ThumbUp";
 
-export default function Video() {
+export default function Video({ setLikedVideos, likedVideos }) {
   const [info, setInfo] = useState([]);
   const [stats, setStats] = useState([]);
   const [relatedVids, setRelatedVids] = useState([]);
@@ -41,8 +42,6 @@ export default function Video() {
       .then((videos) => setRelatedVids(videos.items));
   }, [id]);
 
-  console.log(relatedVids);
-
   const [form, setForm] = useState({ name: "", comment: "" });
 
   function handleChange(e) {
@@ -53,7 +52,7 @@ export default function Video() {
     e.preventDefault();
     comments.push(form);
     setComments(comments);
-    console.log(comments);
+
     setForm({ ...form, [e.target.id]: "" });
   }
 
@@ -74,6 +73,18 @@ export default function Video() {
             <p classname="likes">
               {stats.likeCount} <span>likes</span>
             </p>
+            <div
+              onClick={() => {
+                if (!likedVideos.includes(info)) {
+                  setLikedVideos([...likedVideos, info]);
+                }
+                console.log(likedVideos);
+              }}
+            >
+              <p>
+                <ThumbUpIcon /> Like
+              </p>
+            </div>
           </div>
           <p className="vid-description">
             <h3>Description</h3>

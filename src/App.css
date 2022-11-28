@@ -224,7 +224,7 @@ body{
   background-color: black;
   row-gap: 10px;
   column-gap: 10px;
-  margin:0,auto;
+  /* margin:0,auto; */
 }
 .comments-form{
   display:grid;
@@ -399,4 +399,21 @@ padding-left: 15px;
 }
 .trial4{
   display:grid;
+}
+.relatedVidsCard:hover{
+background-color: red;
+}
+.liked-vids-tit{
+  text-align: center;
+  color:white;
+}
+.liked-vids-grid{
+  display:grid;
+  grid-template-columns: 20% 55% 25%;
+  column-gap: 20px;
+}
+.liked-vids-sect{
+  display:grid;
+  grid-template-columns: repeat(4,1fr);
+  grid-column: 2/3;
 }
