@@ -11,30 +11,30 @@ export default function Sharukh() {
   const [contactVisible, setcontactVisible] = useState(false);
 
   useEffect(() => {
-    details === "Bio"
-      ? setbioVisible(true)
-      : setbioVisible(false);
-      details === "Journey" ? setjourneyVisible(true) : setjourneyVisible(false);
-      details === "Contact" ? setcontactVisible(true) : setcontactVisible(false);
+    details === "Bio" ? setbioVisible(true) : setbioVisible(false);
+    details === "Journey" ? setjourneyVisible(true) : setjourneyVisible(false);
+    details === "Contact" ? setcontactVisible(true) : setcontactVisible(false);
   }, [details]);
 
   const handleOnChange = (e) => {
     setDetails(e.target.value);
   };
 
-
   return (
     <div className="Sharukh-Container">
-<img className="personal-icon" src="./assets/Sharukhpic.png" alt="Sharukh"/>
+      <img
+        className="personal-icon"
+        src="./assets/Sharukhpic.png"
+        alt="Sharukh"
+      />
 
-
-      <div>
-
-      
-       
-      </div>
+      <div></div>
       <div className="Sharukh-dropdown">
-        <select className="form-select" value={details} onChange={handleOnChange}>
+        <select
+          className="form-select"
+          value={details}
+          onChange={handleOnChange}
+        >
           <option value="SelectFellowDetails">Select Fellow Details</option>
           <option value="Bio">Bio</option>
           <option value="Journey">Journey</option>
