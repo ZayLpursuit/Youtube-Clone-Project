@@ -1,13 +1,11 @@
-import SubscriptionsIcon from '@mui/icons-material/Subscriptions';
-import HomeIcon from '@mui/icons-material/Home';
-import ThumbUpIcon from '@mui/icons-material/ThumbUp';
-import ScheduleIcon from '@mui/icons-material/Schedule';
-import VideoLibraryIcon from '@mui/icons-material/VideoLibrary';
-import HistoryIcon from '@mui/icons-material/History';
+import SubscriptionsIcon from "@mui/icons-material/Subscriptions";
+import HomeIcon from "@mui/icons-material/Home";
+import ThumbUpIcon from "@mui/icons-material/ThumbUp";
+import ScheduleIcon from "@mui/icons-material/Schedule";
+import VideoLibraryIcon from "@mui/icons-material/VideoLibrary";
+import HistoryIcon from "@mui/icons-material/History";
 
-import { useNavigate } from 'react-router-dom';
-
-
+import { useNavigate } from "react-router-dom";
 
 export default function Sidebar(){
     const navigate=useNavigate()
@@ -28,3 +26,4 @@ return (
    
 )
 }
+

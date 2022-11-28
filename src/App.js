@@ -1,3 +1,4 @@
+
 import './App.css';
 import {BrowserRouter as Router, Routes,Route, } from "react-router-dom"
 import Nav from './Components/Nav';
@@ -22,12 +23,9 @@ function App() {
      <Route path="/video/:id" element={<Video setLikedVideos={setLikedVideos} likedVideos={likedVideos}/>}/>
     <Route path="/category/:category" element={<Home/>} />
     <Route path="/liked-videos" element={<LikedVideos likedVids={likedVideos}/>}/>
-
-    </Routes>
-  </Router>
+      </Routes>
+    </Router>
   );
 }
 
 export default App;
-
-

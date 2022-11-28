@@ -1,13 +1,15 @@
-import VideoCard from "./VideoCard"
+import VideoCard from "./VideoCard";
 
-export default function Videos({data}){
-console.log(data)
+export default function Videos({ data }) {
+  console.log(data);
 
-return (
-   
+  return (
     <div className="videos">
-        
-        {data.map((video,idx)=><VideoCard videoDetails={video}/>)}
+      {data.map((video, idx) => (
+        <span key={idx}>
+          <VideoCard videoDetails={video} />
+        </span>
+      ))}
     </div>
-)
+  );
 }
