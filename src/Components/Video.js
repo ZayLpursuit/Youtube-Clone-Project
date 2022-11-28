@@ -4,9 +4,10 @@ import React, { useEffect, useState } from "react";
 import Comments from "./Comments.js";
 import RelatedVids from "./RelatedVids.js";
 import Sidebar from "./Sidebar.js";
+import ThumbUpIcon from '@mui/icons-material/ThumbUp';
 
 
-export default function Video(){
+export default function Video({setLikedVideos,likedVideos}){
     const [info,setInfo]=useState([])
     const [stats,setStats]=useState([])
     const [relatedVids,setRelatedVids]=useState([])
@@ -34,7 +35,7 @@ export default function Video(){
         `).then(res=>res.json()).then(videos=>setRelatedVids(videos.items))
       },[id])
 
-console.log(relatedVids)
+
      
       const [form,setForm]=useState({name:"",comment:""})
 
@@ -47,7 +48,7 @@ function onSubmit(e){
 e.preventDefault()
 comments.push(form)
 setComments(comments)
-console.log(comments)
+
 setForm({...form,[e.target.id]:""})
 
 }
@@ -65,6 +66,7 @@ setForm({...form,[e.target.id]:""})
       <h3 className="vid-page-tit">{info.channelTitle}</h3>
       <p className="views">{stats.viewCount} <span>views</span></p>
       <p classname="likes">{stats.likeCount} <span>likes</span></p>
+      <div onClick={()=>{if (!likedVideos.includes(info)){setLikedVideos([...likedVideos,info])}; console.log(likedVideos)}}><p><ThumbUpIcon/> Like</p></div>
       </div>
       <p className="vid-description"><h3>Description</h3>{info.description}</p>
       </div>
