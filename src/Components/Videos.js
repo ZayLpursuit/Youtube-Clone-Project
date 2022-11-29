@@ -1,20 +1,13 @@
-import VideoCard from "./VideoCard";
+import VideoCard from "./VideoCard"
 
-export default function Videos({ data,apiError }) {
-  console.log(data);
-if (apiError===400 || data===undefined){
-console.log("error 400")
-}
-else{
-  return (
-    
+export default function Videos({data, setHistory, history}){
+
+
+return (
+   
     <div className="videos">
-      {data.map((video, idx) => (
-        <span key={idx}>
-          <VideoCard videoDetails={video} />
-        </span>
-      ))}
+        
+        {data.map((video,idx)=><VideoCard videoDetails={video} history={history} setHistory={setHistory}/>)}
     </div>
-  )}
-};
-
+)
+}

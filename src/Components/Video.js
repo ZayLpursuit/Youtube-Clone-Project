@@ -70,7 +70,7 @@ export default function Video({ setLikedVideos, likedVideos }) {
             <p className="views">
               {stats.viewCount} <span>views</span>
             </p>
-            <p className="likes">
+            <p classname="likes">
               {stats.likeCount} <span>likes</span>
             </p>
             <div
@@ -78,7 +78,7 @@ export default function Video({ setLikedVideos, likedVideos }) {
                 if (!likedVideos.includes(info)) {
                   setLikedVideos([...likedVideos, info]);
                 }
-                console.log(likedVideos);
+                console.log(info);
               }}
             >
               <p>
@@ -95,7 +95,7 @@ export default function Video({ setLikedVideos, likedVideos }) {
         <div className="x">
           <form className="comments-form" onSubmit={onSubmit}>
             <h3>Leave a comment</h3>
-            <label htmlFor="name" className="name-label">
+            <label for="name" className="name-label">
               Name:
               <input
                 type="text"
@@ -104,7 +104,7 @@ export default function Video({ setLikedVideos, likedVideos }) {
                 onChange={handleChange}
               />
             </label>
-            <label htmlFor="comment">
+            <label for="comment">
               Comment:
               <input
                 type="text-area"

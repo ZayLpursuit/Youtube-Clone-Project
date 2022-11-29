@@ -1,14 +1,13 @@
 import Search from "./Search";
 import Videos from "./Videos";
-
 import Categories from "./Categories";
 import Sidebar from "./Sidebar";
 import { useEffect, useState } from "react";
+
 import ErrorModal from "./UI/ErrorModal";
 
-
-export default function Home() {
-  const [vidData, setVidData] = useState([]);
+export default function Home({setHistory,history}){
+const [vidData, setVidData] = useState([]);
   const [vidType, setVidType] = useState("Most Popular");
   const [error, setError] = useState(null);
 const[apiError,setApiError]=useState(false)
@@ -67,7 +66,7 @@ useEffect(()=>{
             </span>
           </p>
         </div>
-        <Videos apiError={apiError} data={vidData} />
+            <Videos data={vidData} setHistory={setHistory} history={history}/>
       </div>
     </div>
   );
