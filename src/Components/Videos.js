@@ -7,7 +7,7 @@ return (
    
     <div className="videos">
         
-        {data.map((video,idx)=><div key={idx}><VideoCard videoDetails={video} history={history} setHistory={setHistory}/></div>)}
+        {data && data.map((video,idx)=><div key={idx}><VideoCard videoDetails={video} history={history} setHistory={setHistory}/></div>)}
     </div>
 )
 }
