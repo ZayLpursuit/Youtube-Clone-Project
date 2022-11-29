@@ -1,5 +1,10 @@
+import { Card } from "@mui/material";
+import classes from "./Zay.module.css"
+
 export default function ZayJourney() {
   return (
+    <Card id={classes.zay}>
+
     <div>
       <strong>Zay's Journey </strong>
       <p>
@@ -29,5 +34,6 @@ export default function ZayJourney() {
         and the best is yet to come!
       </p>
     </div>
+    </Card>
   );
 }

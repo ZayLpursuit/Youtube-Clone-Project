@@ -1,7 +1,12 @@
 import GitHubIcon from "@mui/icons-material/GitHub";
+import { Card } from "@mui/material";
+import classes from "./Sharukh.module.css";
 
 export default function SharukhContact() {
   return (
+
+    <Card id={classes.sharukh}>
+
     <div>
       <strong>Sharukh's Contact Information</strong>
 
@@ -19,5 +24,6 @@ export default function SharukhContact() {
         <a href="https://github.com/SharukhGV">Sharukh Velupillai</a>{" "}
       </p>
     </div>
+    </Card>
   );
 }

@@ -1,7 +1,11 @@
 import GitHubIcon from "@mui/icons-material/GitHub";
+import { Card } from "@mui/material";
+import classes from "./Zay.module.css"
 
 export default function ZayContact() {
   return (
+    <Card id={classes.zay}>
+
     <div>
       <strong>Zay's Contact Information</strong>
 
@@ -17,5 +21,6 @@ export default function ZayContact() {
         <a href="https://github.com/ZayLpursuit">Isaiah Lors</a>{" "}
       </p>
     </div>
+    </Card>
   );
 }
