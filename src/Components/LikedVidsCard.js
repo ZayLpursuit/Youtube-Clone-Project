@@ -13,7 +13,7 @@ export default function LikedVidsCard({videoDetails}){
     }
 
     return   ( 
-     <div onClick={()=>{navigate(`/video/${videoDetails.id.videoId||videoDetails.id}`);}} >
+     <div onClick={()=>{navigate(`/video/${videoDetails.id.videoId||videoDetails.id}`); console.log(videoDetails)}} >
      
      {videoDetails ? <div className="video-card">
              <img src={videoDetails.thumbnails.medium.url} alt="pic" className="thumb"/>
