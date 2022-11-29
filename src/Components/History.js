@@ -13,7 +13,7 @@ export default function History ({history}){
                 <Sidebar/></div>
             {history.length?(
                 <div className="history-vids">
-                    {history.map(video=><VideoCard videoDetails={video}/>)}
+                    {history.map((video,idx)=><div key={idx}><VideoCard videoDetails={video}/></div>)}
                 </div>
                ) : <div className="novids"><p className="history-vids-p">You have not watched any videos yet!</p></div> }
                </div>

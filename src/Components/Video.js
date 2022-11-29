@@ -5,6 +5,7 @@ import Comments from "./Comments.js";
 import RelatedVids from "./RelatedVids.js";
 import Sidebar from "./Sidebar.js";
 import ThumbUpIcon from "@mui/icons-material/ThumbUp";
+// import { red } from "@mui/material/colors";
 
 export default function Video({ setLikedVideos, likedVideos }) {
   const [info, setInfo] = useState([]);
@@ -70,7 +71,7 @@ export default function Video({ setLikedVideos, likedVideos }) {
             <p className="views">
               {stats.viewCount} <span>views</span>
             </p>
-            <p classname="likes">
+            <p className="likes">
               {stats.likeCount} <span>likes</span>
             </p>
             <div
@@ -82,20 +83,21 @@ export default function Video({ setLikedVideos, likedVideos }) {
               }}
             >
               <p>
-                <ThumbUpIcon /> Like
+                <span className="Like-Button-Effect7" onClick={(e)=>{e.target.setAttribute("style", "color:red")
+}}><ThumbUpIcon /></span> Like
               </p>
             </div>
           </div>
-          <p className="vid-description">
+          <div className="vid-description">
             <h3>Description</h3>
             {info.description}
-          </p>
+          </div>
         </div>
 
         <div className="x">
           <form className="comments-form" onSubmit={onSubmit}>
             <h3>Leave a comment</h3>
-            <label for="name" className="name-label">
+            <label htmlFor="name" className="name-label">
               Name:
               <input
                 type="text"
@@ -104,7 +106,7 @@ export default function Video({ setLikedVideos, likedVideos }) {
                 onChange={handleChange}
               />
             </label>
-            <label for="comment">
+            <label htmlFor="comment">
               Comment:
               <input
                 type="text-area"

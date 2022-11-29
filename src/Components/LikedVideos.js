@@ -15,8 +15,8 @@ export default function LikedVideos({likedVids}){
                 </aside>
             <div className="liked-vids-sect">
             {likedVids? (
-                likedVids.map(video=>{
-                    return <LikedVidsCard videoDetails={video} />
+                likedVids.map((video,idx)=>{
+                    return <div key={idx}><LikedVidsCard videoDetails={video} /></div>
                 })
             ): <p>No Liked Videos</p>}
             </div>
