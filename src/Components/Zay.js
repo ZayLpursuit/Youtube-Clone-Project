@@ -11,27 +11,26 @@ export default function Zay() {
   const [contactVisible, setcontactVisible] = useState(false);
 
   useEffect(() => {
-    details === "Bio"
-      ? setbioVisible(true)
-      : setbioVisible(false);
-      details === "Journey" ? setjourneyVisible(true) : setjourneyVisible(false);
-      details === "Contact" ? setcontactVisible(true) : setcontactVisible(false);
+    details === "Bio" ? setbioVisible(true) : setbioVisible(false);
+    details === "Journey" ? setjourneyVisible(true) : setjourneyVisible(false);
+    details === "Contact" ? setcontactVisible(true) : setcontactVisible(false);
   }, [details]);
 
   const handleOnChange = (e) => {
     setDetails(e.target.value);
   };
 
-
   return (
     <div className="Zay-Container">
+      <img className="personal-icon" src="./assets/Zaypic.png" alt="Zay" />
 
-<img className="personal-icon" src="./assets/Zaypic.png" alt="Zay"/>
-
-      <div>
-   </div>
+      <div></div>
       <div className="Zay-dropdown">
-        <select className="form-select" value={details} onChange={handleOnChange}>
+        <select
+          className="form-select"
+          value={details}
+          onChange={handleOnChange}
+        >
           <option value="SelectFellowDetails">Select Fellow Details</option>
           <option value="Bio">Bio</option>
           <option value="Journey">Journey</option>

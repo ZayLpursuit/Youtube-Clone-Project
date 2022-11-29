@@ -240,7 +240,7 @@ body{
   padding-left:10px;
 }
 .links{
-  color:white;
+  /* color:white; */
   text-decoration: none;
   font-size: 22px;
 }
