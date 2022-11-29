@@ -6,9 +6,9 @@ export default function LikedVidsCard({videoDetails}){
 
     const navigate=useNavigate()
     const ptag={
-        "text-align":" center",
-        "background-color":"red",
-        "font-size":"30px"
+        "textAlign":" center",
+        "backgroundColor":"red",
+        "fontSize":"30px"
 
     }
 

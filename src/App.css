@@ -424,7 +424,7 @@ background-color: red;
 
 .links:hover{
 background-color: rgba(255, 255, 255, 0.139);
-  
+}
 
 .history-grid{
   display:grid;
@@ -440,7 +440,7 @@ background-color: rgba(255, 255, 255, 0.139);
 }
 .novids{
   grid-column:2;
-  grid-row: 2;
+  grid-row: 1;
   text-align: center;
 }
 .history-vids{
@@ -454,5 +454,11 @@ background-color: rgba(255, 255, 255, 0.139);
 }
 .sid{
   grid-row:1;
+
+}
+
+.Like-Button-Effect7:hover{
+
+color: #DC4539;
 
 }
