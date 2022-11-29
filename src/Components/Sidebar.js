@@ -20,7 +20,7 @@ return (
          <li className='sidebar-li' onClick={()=>navigate("/")}> <HomeIcon /><p>Home</p></li>
          <li className='sidebar-li'> <SubscriptionsIcon/><p>Subscriptions</p></li>
          <li className='sidebar-li' onClick={()=>navigate("/liked-videos")}> <ThumbUpIcon/><p>Liked Videos</p></li>
-         <li className='sidebar-li'> <HistoryIcon/><p>History</p></li>
+         <li className='sidebar-li' onClick={()=>navigate("/history")}> <HistoryIcon/><p>History</p></li>
          <li className='sidebar-li'> <ScheduleIcon/><p>Watch Later</p></li>
          <li className='sidebar-li'> <VideoLibraryIcon/><p>Library</p></li>
            </ul>

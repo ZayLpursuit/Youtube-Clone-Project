@@ -8,7 +8,7 @@ import { useEffect, useState } from "react";
 
 
 
-export default function Home(){
+export default function Home({setHistory,history}){
 const [vidData,setVidData]=useState([])
 const [vidType,setVidType]=useState("Most Popular")
 useEffect(()=>{
@@ -25,7 +25,7 @@ fetch(`https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDe
             <Categories setVidData={setVidData} setVidType={setVidType}/>
             <p className="vid-type">Showing Videos For: <span className="red"><strong>"{vidType}"</strong></span></p>
             </div>
-            <Videos data={vidData}/>
+            <Videos data={vidData} setHistory={setHistory} history={history}/>
           
         </div>
     )
