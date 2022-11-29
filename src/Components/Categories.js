@@ -6,12 +6,23 @@ export default function Categories({ setVidData, setVidType }) {
   const [categories, setCategories] = useState([]);
   const navigate = useNavigate();
   const [error, setError] = useState(null);
+const[apiError,setApiError]=useState(false)
+
+useEffect(()=>{
+
+
+  fetch(
+    `https://www.googleapis.com/youtube/v3/videoCategories?part=snippet&regionCode=US&key=${process.env.REACT_APP_API_KEY}`
+  ).then((response) =>  response.status).then(code=>{setApiError((code))})
+},[])
 
   useEffect(() => {
-    if (process.env.REACT_APP_API_KEY === undefined) {
+
+
+    if (process.env.REACT_APP_API_KEY === undefined || (apiError === 400) || (apiError === 403)) {
       setError({
-        title: "Error 400: Perhaps you made too many API requests",
-        message: "Please try again later",
+        title: `Error ${apiError}`,
+        message: "We cannot get 'Categories' for Videos. Please try again later",
       });
     } else {
       fetch(
@@ -22,15 +33,16 @@ export default function Categories({ setVidData, setVidType }) {
 
         .catch((error) => {
           console.log(error);
+          
         });
     }
-  }, []);
+  }, [apiError]);
 
   function getCatData(idx) {
-    if (process.env.REACT_APP_API_KEY === undefined) {
+    if (process.env.REACT_APP_API_KEY === undefined || (apiError === 400) || (apiError === 403)) {
       setError({
-        title: "Error 400: Perhaps you made too many API requests",
-        message: "Please try again later",
+        title: `Error ${apiError}`,
+        message: "We cannot get 'Categories' for Videos. Please try again later",
       });
     } else {
       fetch(
@@ -48,20 +60,19 @@ export default function Categories({ setVidData, setVidType }) {
     setError(null);
   }
 
+
   return (
     <div>
-      <div>
-        {error && (
+        {error && (<div>
           <ErrorModal
             title={error.title}
             message={error.message}
             onConfirm={errorHandler}
-          />
+          /></div>
         )}
-      </div>
 
       <div className="categories">
-        {categories
+        {categories && categories
           .filter((cat) => cat.snippet.assignable)
           .map((category) => (
             <button

@@ -243,6 +243,7 @@ body{
   /* color:white; */
   text-decoration: none;
   font-size: 22px;
+  text-align: center;
 }
 .sidebar-li{
   list-style: none;
@@ -418,6 +419,13 @@ background-color: red;
   grid-template-columns: repeat(4,1fr);
   grid-column: 2/3;
 }
+
+
+
+.links:hover{
+background-color: rgba(255, 255, 255, 0.139);
+  
+
 .history-grid{
   display:grid;
   grid-template-columns:20% 55% 25%;
@@ -446,4 +454,5 @@ background-color: red;
 }
 .sid{
   grid-row:1;
+
 }
