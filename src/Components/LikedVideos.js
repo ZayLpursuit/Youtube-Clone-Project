@@ -1,7 +1,8 @@
 
 import LikedVidsCard from "./LikedVidsCard"
 import Sidebar from "./Sidebar"
-
+import { Card } from "@mui/material";
+import classes from "./LikedVideos.module.css"
 
 export default function LikedVideos({likedVids}){
   
@@ -14,11 +15,11 @@ export default function LikedVideos({likedVids}){
                 <Sidebar/>
                 </aside>
             <div className="liked-vids-sect">
-            {likedVids? (
+            {likedVids.length ? (
                 likedVids.map((video,idx)=>{
                     return <div key={idx}><LikedVidsCard videoDetails={video} /></div>
                 })
-            ): <p>No Liked Videos</p>}
+            ): <Card className={classes.NoLike} >You have not liked any Videos yet</Card>}
             </div>
             </div>
         </div>

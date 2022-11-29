@@ -5,7 +5,7 @@ import classes from "./About.module.css"
 
 export default function About() {
   return (
-    <div>
+    <div className="bottom-page-about">
 
       <Card id={classes.aboutpage777}><div><div>YouTube Clone Project</div>
       <br/> 
